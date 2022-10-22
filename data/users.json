@@ -1,0 +1,17 @@
+[
+    {
+        "user_id":1,
+        "user_first_name":"Test User",
+        "user_surname":"",
+        "user_email":"tester@comp3170.com",
+        "user_password":"testpassw0rd"
+       
+    },
+    {
+        "user_id":2,
+        "user_first_name":"Adeyah",
+        "user_surname":"McKenzie",
+        "user_email":"adeyahmckenzie@uwi.com",
+        "user_password":"Framework1"
+    }
+]
