@@ -19,7 +19,18 @@
 		<main>
 		   <div class="login-box">
 			<div class="login-box-body">
+				
 			<p class="login-box-msg">Be Curious - Sign In</p>
+			<?php if (isset($loginError))
+				  		{
+					  		echo  "<p class ='login-box-msg' style='color:red'>".$loginError."</p>";
+				  		}
+
+						  if (isset($passwordError))
+				  		{
+					  		echo  "<p class='login-box-msg' style='color:red'>".$passwordError."</p>";
+				  		}
+					?>
 			<form action="#" method="post">
 			  <div class="form-group has-feedback">
 				<input type="text" class="form-control" placeholder="Email"/>
@@ -44,6 +55,7 @@
 			<a href="register.html" class="text-center">Sign Up</a>
        </div><!-- /.login-box-body -->
 	  </div>
+	  <p><?php echo $message;?></p>
 			<footer>
 				<nav>
 					<ul>
