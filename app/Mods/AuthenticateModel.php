@@ -8,11 +8,13 @@ class AuthenticateModel extends Model {
 
         foreach($users as $user){
             //check for a match in the dataset
-            if ($user ['email'] == $id)
+            if ($user ['user_email'] == $id)
             {
                 //return entire course record in an array
                 return $user;
             }
+            
         }
+        return[];
     }
 }

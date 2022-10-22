@@ -15,27 +15,37 @@ class AuthenticateController extends Controller{
         //get users data set 
         $users = $mod->getFile('users.json'); 
 
+        //initialize user to null 
+        $user = NULL;
+
         //get details entered by user
         if (isset($_POST['email']) && isset($_POST['password']) ){ //check that password and email fields have been filled before attempting to save
 
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $user = $mod->getRecord($email);
+            
+            
+        }
+        else {
+            $loginError = " Please fill in all fields";
         }
 
         $userExists = false;//change if user is found with email entered
-
-        //use getRecord method to find a match if it exists
-        if ($user = $this->getRecord($email))
+                
+        if ($user != NULL  && $user['user_email'] == $email)
         {
-            echo " user exists !";
+            
             //check pasword 
-            if($user['password'] == $password)
+            if($user['user_password'] == $password)
             {
                 $userExists = true; //set userExists to true when user is found
             }
             else {
-                echo " wrong pass !";
+                
                 $passwordError = "This password is incorrect. Please try again.";
+                //add errors to the login screen
+                $vw -> addVar('passwordError',$passwordError);
             }
 
         }
@@ -60,7 +70,7 @@ class AuthenticateController extends Controller{
         $this->setView($vw);
 
         //only do this if user is not in data store
-        if ($userExists == false){
+        if ($userExists == false && !isset($passwordError)){
             
             //add errors to the login screen
             $vw -> addVar('loginError',$loginError);
@@ -72,8 +82,7 @@ class AuthenticateController extends Controller{
 
         } 
 
-        //for testing purposes
-        $vw -> addVar('message','The add var here works !');
+        
 
         //set template to login page (user cannot be redirected to course page because they are not logged in )
         $vw->setTemplate(TEMPLATE_DIR . '/login.tpl.php');
