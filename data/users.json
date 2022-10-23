@@ -1,17 +1,1 @@
-[
-    {
-        "user_id":1,
-        "user_first_name":"Test User",
-        "user_surname":"",
-        "user_email":"tester@comp3170.com",
-        "user_password":"testpassw0rd"
-       
-    },
-    {
-        "user_id":2,
-        "user_first_name":"Adeyah",
-        "user_surname":"McKenzie",
-        "user_email":"adeyahmckenzie@uwi.com",
-        "user_password":"Framework1"
-    }
-]
+[{"user_id":1,"user_first_name":"Test User","user_surname":"","user_email":"tester@comp3170.com","user_password":"testpassw0rd"},{"user_id":2,"user_first_name":"Adeyah","user_surname":"McKenzie","user_email":"adeyahmckenzie@uwi.com","user_password":"Framework1"},{"user_id":3,"user_first_name":"John","user_surname":"Doe","user_email":"johndoe@hotmail.com","user_password":"john"},{"user_id":4,"user_first_name":"Winston M","user_surname":"McKenzie","user_email":"winstonmckenze@hotmail.com","user_password":"winston"}]

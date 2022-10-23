@@ -30,6 +30,10 @@
 				  		{
 					  		echo  "<p class='login-box-msg' style='color:red'>".$passwordError."</p>";
 				  		}
+						  if (isset($sucess))
+				  		{
+					  		echo  "<p class='login-box-msg' style='color:green'>".$success."</p>";
+				  		}
 					?>
 			<form action="authenticate.php" method="POST">
 			  <div class="form-group has-feedback">

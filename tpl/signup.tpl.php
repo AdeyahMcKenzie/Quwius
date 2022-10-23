@@ -20,18 +20,32 @@
 		   <div class="register-box">
 			<div class="register-box-body">
 			<p class="login-box-msg">Sign Up - Feed Your Curiosity</p>
-        <form action="processRegisteration.php" method="post">
+			<?php if (isset($passwordErr))
+				  		{
+					  		echo  "<p class ='login-box-msg' style='color:red'>".$passwordErr."</p>";
+				  		}
+
+						  if (isset($registerErr))
+				  		{
+					  		echo  "<p class='login-box-msg' style='color:red'>".$registerErr."</p>";
+				  		}
+						  if (isset($fail))
+				  		{
+					  		echo  "<p class='login-box-msg' style='color:red'>".$fail."</p>";
+				  		}
+					?>
+        <form action="verify.php" method="POST">
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" name="formFullName" placeholder="Full name"/>
+            <input type="text" class="form-control" name="name" placeholder="Full name"/>
           </div>
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Email"/>
+            <input type="text" class="form-control" name ="email" placeholder="Email"/>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Password"/>
+            <input type="password" class="form-control" name="password" placeholder="Password"/>
           </div>
           <div class="form-group has-feedback">
-            <input type="password" class="form-control" placeholder="Retype password"/>
+            <input type="password" name="password2" class="form-control" placeholder="Retype password"/>
           </div>
           <div class="row">
             <div class="col-xs-8">    
