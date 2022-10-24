@@ -30,14 +30,15 @@
 				  		{
 					  		echo  "<p class='login-box-msg' style='color:red'>".$passwordError."</p>";
 				  		}
-						  if (isset($sucess))
+						  if (isset($success))
 				  		{
 					  		echo  "<p class='login-box-msg' style='color:green'>".$success."</p>";
 				  		}
 					?>
 			<form action="authenticate.php" method="POST">
 			  <div class="form-group has-feedback">
-				<input type="text" class="form-control" name ="email" placeholder="Email"/>
+				<input type="text" <?php if (isset($email)){ echo "value ='".$email."'";}?>
+					class="form-control" name ="email" placeholder="Email"/>
 			  </div>
 			  <div class="form-group has-feedback">
 				<input type="password" class="form-control" name ="password" placeholder="Password"/>

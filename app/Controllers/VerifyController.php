@@ -53,9 +53,9 @@ class VerifyController extends Controller{
                 //set template for redirect message
                 $vw->setTemplate(TEMPLATE_DIR . '/signup.tpl.php');
 
-                $vw->display();
+                //$vw->display();
 
-                exit();
+                //exit();
                 
              }
 
@@ -72,9 +72,9 @@ class VerifyController extends Controller{
                  //set template for redirect message
                  $vw->setTemplate(TEMPLATE_DIR . '/signup.tpl.php');
 
-                $vw->display();
+                //$vw->display();
 
-                exit();
+                //exit();
 
              }
 
@@ -83,8 +83,9 @@ class VerifyController extends Controller{
              {
                  //check if new user added successfully
                 if($mod->addUser($user) == true){
-                    $successMessage = "SignUp successful. Please login below !";
-                    $vw -> addVar('success',$successMessage);
+                    $success = "SignUp successful. Please login below !";
+                    $vw -> addVar('success',$success);
+                    $vw -> addVar('email',$email);//send email to login page to facilitate easier login
 
                     //set template for redirect message
                     $vw->setTemplate(TEMPLATE_DIR . '/login.tpl.php');
@@ -93,15 +94,18 @@ class VerifyController extends Controller{
                 }else {
                     $fail = "There was some trouble creating your account, please try again.";
                     $vw -> addVar('fail',$fail);
+                    //set template for redirect message
+                    $vw->setTemplate(TEMPLATE_DIR . '/signup.tpl.php');
                 }
 
-                //set template for redirect message
-                $vw->setTemplate(TEMPLATE_DIR . '/signup.tpl.php');
-
-                $vw->display();
-
-                exit();
+                
              }
+             
+
+             
+
+             $vw->display();
+             exit();  
         }
     }
 }
