@@ -1,0 +1,35 @@
+[
+    {
+        "email":"tester@comp3170.com",
+        "course_id":1
+    },
+    {
+        "email":"tester@comp3170.com",
+        "course_id":16
+    },
+    {
+        "email":"tester@comp3170.com",
+        "course_id":8
+    },
+    {
+        "email":"tester@comp3170.com",
+        "course_id":11
+    }
+    , {
+        "email":"tester@comp3170.com",
+        "course_id":3
+    },
+    {
+        "email":"adeyahmckenzie@uwi.com",
+        "course_id":1
+    },
+    {
+        "email":"adeyahmckenzie@uwi.com",
+        "course_id":5
+    },
+    {
+        "email":"adeyahmckenzie@uwi.com",
+        "course_id":10
+    }
+
+]
