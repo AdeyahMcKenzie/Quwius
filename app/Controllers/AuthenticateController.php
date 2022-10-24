@@ -59,7 +59,15 @@ class AuthenticateController extends Controller{
         //only if login details are correct
         if ($userExists)
         {
-            //start new session
+            //create new instance of session
+            $session = new SessionClass();
+            //create new session
+            $session->create();
+            //add user to session
+            $session->add("email",$email);
+
+            
+
 
             //redirect user to profile page
             header("Location: profile.php");

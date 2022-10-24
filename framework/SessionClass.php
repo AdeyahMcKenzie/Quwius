@@ -4,6 +4,7 @@
 class SessionClass{
 
     private $sess;
+    private $access = ['profile' => ['tester@comp3170.com','adeyahmckenzie@uwi.com']];
 
     public function create(): void {
         session_start();
@@ -27,11 +28,10 @@ class SessionClass{
     }
 
     public function accessible($user,$page): bool{
-         if (isset($_SESSION['name'])){
-             if ($_SESSION['name'] == $user ){
-                 return true;
-             }
-         }
-         return false;
+        if(in_array($user,$this -> access[$page])){
+            return true;
+        }
+        
+        return false;
     }
 }

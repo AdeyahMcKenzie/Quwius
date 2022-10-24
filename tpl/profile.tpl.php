@@ -20,58 +20,32 @@
 		<h1>Profile Page</h1>
 		<h2>Enrolled Courses</h2>
 		<ul class="course-list">
-			<li><div>
-				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
-				</div>
-				<div>
-				<a href="#"><span class="faculty-department">Faculty or Department</span>	
-					<span class="course-title">Course Title</span>
-					<span class="instructor">Course Instructor</span></a>
-				</div>
-				<div>
-					<a href="#" class="startnow-btn startnow-button">Go to Class!</a>
-					<a href="#" class="startnow-btn unenroll-button">Unenroll</a>
-				</div>
-			</li>
-			<li><div>
-				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
-				</div>
-				<div>
-				<a href="#"><span class="faculty-department">Faculty or Department</span>	
-					<span class="course-title">Course Title</span>
-					<span class="instructor">Course Instructor</span></a>
-				</div>
-				<div>
-					<a href="#" class="startnow-button startnow-btn">Go to Class!</a>
-					<a href="#" class="startnow-btn unenroll-button">Unenroll</a>
-				</div>
-			</li>
-			<li><div>
-				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
-				</div>
-				<div>
-				<a href="#"><span class="faculty-department">Faculty or Department</span>	
-					<span class="course-title">Course Title</span>
-					<span class="instructor">Course Instructor</span></a>
-				</div>
-				<div>
-					<a href="#" class="startnow-button startnow-btn">Go to Class!</a>
-					<a href="#" class="startnow-btn unenroll-button">Unenroll</a>
-				</div>
-			</li>
-			<li><div>
-				<a href="#"><img src="images/innovation.jpg" alt="course image"></a>
-				</div>
-				<div>
-				<a href="#"><span class="faculty-department">Faculty or Department</span>	
-					<span class="course-title">Course Title</span>
-					<span class="instructor">Course Instructor</span></a>
-				</div>
-				<div>
-					<a href="#" class="startnow-button startnow-btn">Go to Class!</a>
-					<a href="#" class="startnow-btn unenroll-button">Unenroll</a>
-				</div>
-			</li>
+		<?php 
+					$display = [];
+					for($i=0;$i<count($allCourses);$i++ ){
+						
+						for($j=0;$j<count($courses);$j++){
+							if ($allCourses[$i]['course_id'] == $courses[$j]['course_id']){
+								//print_r( $allCourses[$i]['course_id']. "<br>") ;
+								array_push($display,$allCourses[$i]) ;
+							}
+						}
+					}
+					
+					//print_r($data);
+					for($k=0;$k<count($display);$k++){
+						//create new list item
+						echo "<li>";
+						echo "<div> <a href='#'><img src='".$display[$k]['course_image']."'></a> </div>";
+						echo "<div> <a href='#'> 
+						<span class='faculty-department'>Faculty or Department</span>
+						<span class='course-title'>".$display[$k]['course_name']."</span>
+						<span class='instructor'>Course Instructor</span>
+						</a> </div>";
+						echo "<div> <a href='#' class='startnow-btn startnow-button'>Go to Class!</a> <a href='#' class='startnow-btn unenroll-button'>Unenroll</a></div>";
+						echo "</li>";
+					}
+		?>
 		</ul>
 			<footer>
 				<nav>
